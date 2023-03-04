@@ -1,0 +1,57 @@
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
+.App {
+  text-align: center;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.flex{
+  display: flex;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.jc-center{
+  justify-content: center;
+}
+
+.align-item-center{
+  align-items: center;
+}
+
+.Heading{
+  color: #20b2aa;
+  font-size: 5rem;
+  width: 100vw;
+}
+
+
+.Para{
+  color: white;
+  font-size: 20px;
+  width: 100vw;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
