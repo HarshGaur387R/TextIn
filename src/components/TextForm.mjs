@@ -48,10 +48,9 @@ export default function TextForm() {
         <>
             <div className='container mt-4'>
 
-                <textarea className="form-control" value={textState} onChange={handleOnApply} placeholder="Enter Your text here" id="floatingTextarea2" style={{ height: '300px' }}></textarea>
+                <textarea className="form-control" value={textState} onChange={handleOnApply} placeholder="Enter Your text here" id="floatingTextarea2" style={{ height: '200px' }}></textarea>
 
                 <div className="d-grid gap-2 d-md-flex mt-3 justify-content-md-end">
-                    {/* <button class="btn btn-primary me-md-2" type="button">To Uppercase</button> */}
 
                     <select id="selectFilter" defaultValue={0} className="form-select me-md-2" style={{ maxWidth: "300px" }} aria-label="Default select example">
                         <option value={'0'}>To Uppercase</option>
