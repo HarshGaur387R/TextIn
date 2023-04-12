@@ -1,9 +1,16 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
+
 export default function Navbar(prop) {
+
+    const handleOnCheck = ()=>{
+        prop.toggleMode();
+    }
+
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        
+        <nav className={`navbar navbar-expand-lg navbar-${prop.mode} bg-${prop.mode}`}>
             <div className="container-fluid">
                 <a className="navbar-brand ms-md-5" href="/">{prop.title}</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,14 +32,13 @@ export default function Navbar(prop) {
                                 <li><a className="dropdown-item" href="/">Action</a></li>
                                 <li><a className="dropdown-item" href="/">Another action</a></li>
                                 <li><hr className="dropdown-divider" /></li>
-                                <li><a className="dropdown-item" href="/">{prop.aboutText}</a></li>
-                        <div class="form-check form-switch ms-3 mt-2">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
-                        </div>
+                                <li><a className="dropdown-item" href="/">About</a></li>
+                                <div className="form-check form-switch ms-3 mt-2" >
+                                    <input className="form-check-input" onChange={handleOnCheck} type="checkbox" id="flexSwitchCheckDefault" />
+                                </div>
                             </ul>
                         </li>
                     </ul>
-
 
                     <div className="d-flex me-md-5">
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -41,16 +47,16 @@ export default function Navbar(prop) {
                 </div>
             </div>
         </nav>
-
+    
     )
 }
 
 Navbar.propTypes = {
     title: PropTypes.string,
-    aboutText: PropTypes.string
+    toggleMode: PropTypes.func,
+    navbarMode: PropTypes.string
 };
 
 Navbar.defaultProps = {
-    title: 'set title here',
-    aboutText: 'ABout'
+    title: 'TextIn',
 }
