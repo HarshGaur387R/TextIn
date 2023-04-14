@@ -4,6 +4,18 @@ export default function TextForm(props) {
 
     const [textState, changeTextState] = useState('');
 
+    function countWords(str) {
+        str = str.trim();
+        
+        var words = str.split(/\s+/);
+        
+
+        if (words[0] === '') {
+            return 0;
+        }
+        return words.length;
+    }
+
     function removeWhitespace(str) {
         return str.replace(/\s+/g, '');
     }
@@ -96,7 +108,7 @@ export default function TextForm(props) {
 
                 <div className="container mt-4 text-end">
                     <h1>Text summary</h1>
-                    <p>{textState.split(" ").length} Words and Characters {textState.length}</p>
+                    <p>{countWords(textState)} Words and Characters {textState.length}</p>
                     <p>{0.008 * textState.split(" ").length} Minutes Read</p>
                 </div>
 
