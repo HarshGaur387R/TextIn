@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 
 export default function TextForm(props) {
 
@@ -9,8 +8,28 @@ export default function TextForm(props) {
         return str.replace(/\s+/g, '');
     }
 
+    function removeExtraSpaces(str) {
+        return str.replace(/\s+/g, ' ').trim();
+    }
+
     function removeSpecialCharacters(str) {
         return str.replace(/[^\w\s]/gi, '');
+    }
+
+    const handleOnCopy = () => {
+        let t = document.getElementById('floatingTextarea2').value;
+
+        navigator.clipboard.writeText(t)
+            .then(() => {
+                props.showAlert("Copied!");
+            })
+            .catch((err) => {
+                props.showAlert("Try Again");
+            });
+
+        setTimeout(()=>{
+            props.showAlert(null);
+        },2000)
     }
 
     const handleOnApply = (event) => {
@@ -37,6 +56,10 @@ export default function TextForm(props) {
             case '3':
                 changeTextState(removeSpecialCharacters(textState));
                 break;
+
+            case '4':
+                changeTextState(removeExtraSpaces(textState));
+                break;
             default:
         }
     }
@@ -50,6 +73,10 @@ export default function TextForm(props) {
             <div id="textForm" className={`textFormPage min-vh-100 w-100`}>
                 <div className='container pt-4'>
 
+                    <div className="d-md-flex mb-2 justify-content-md-end">
+                        <button type="button" className="copyBtn btn btn-outline-primary rounded-0" onClick={handleOnCopy}>Copy</button>
+                    </div>
+
                     <textarea className="form-control" value={textState} onChange={handleOnApply} placeholder="Enter Your text here" id="floatingTextarea2" style={{ height: '200px' }}></textarea>
 
                     <div className="d-grid gap-2 d-md-flex mt-3 justify-content-md-end">
@@ -59,6 +86,7 @@ export default function TextForm(props) {
                             <option value={'1'}>To Lowercase</option>
                             <option value={'2'}>Remove White Space</option>
                             <option value={'3'}>Remove Special Characters</option>
+                            <option value={'4'}>Remove Extra Space</option>
                         </select>
 
                         <button className="btn btn-primary" onClick={handleOnUppercase} type="button">Apply</button>
@@ -79,12 +107,4 @@ export default function TextForm(props) {
             </div>
         </>
     )
-}
-
-TextForm.propTypes = {
-    mode : PropTypes.object
-}
-
-TextForm.defaultProps = {
-    mode : {bg:"white",color:"black",textarea:"gray"}
 }

@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar.mjs';
 import TextForm from './components/TextForm.mjs';
 import About from './components/About.mjs';
+import Alert from './components/Alert.mjs'
 import { useState } from 'react';
 
 
@@ -10,6 +11,15 @@ function App() {
   const [mode, setMode] = useState({ color: "black", backgroundColor: "white" });
   const [navbarMode,setNavbarMode] = useState("light");
   const [textFormMode, setTextFormMode] = useState({bg:"white",color:"black",textarea:"white"});
+  const [alertText, setAlertText] = useState(null);
+
+  
+  const showAlert = (status) =>{
+
+    setAlertText(status);
+    
+  }
+ 
 
   const toggleMode = () => {
     if (mode.color === "black") {
@@ -25,6 +35,7 @@ function App() {
 
       document.getElementById('preview').style.color = "white";
     }
+
     else if (mode.color === "white") {
       setMode({ color: "black", backgroundColor: "white" });
       setNavbarMode("light");
@@ -44,7 +55,8 @@ function App() {
 
     <div id="App">
     <Navbar title={'TextIn'} toggleMode={toggleMode} mode={navbarMode}/>
-    <TextForm mode={textFormMode}/> 
+    <Alert msg={alertText} func={setAlertText}/>
+    <TextForm mode={textFormMode} showAlert={showAlert}/> 
     <About mode={mode}/> 
     </div>
    

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from 'prop-types';
 
 
 export default function Navbar(prop) {
@@ -51,12 +50,3 @@ export default function Navbar(prop) {
     )
 }
 
-Navbar.propTypes = {
-    title: PropTypes.string,
-    toggleMode: PropTypes.func,
-    navbarMode: PropTypes.string
-};
-
-Navbar.defaultProps = {
-    title: 'TextIn',
-}

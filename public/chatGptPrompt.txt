@@ -1,0 +1,100 @@
+I am creating Alert component in rect application . Whenever user click the copy button. The value of textarea will get copy on clipboard. and alert component show the popup window. its working fine for the first time but when i click on copy button second time popup is not showing. please help.
+
+
+------------  File : App.js ----------
+
+import './App.css';
+import TextForm from './components/TextForm.mjs';
+import Alert from './components/Alert.mjs'
+import { useState } from 'react';
+
+
+function App() {
+
+  const [mode, setMode] = useState({ color: "black", backgroundColor: "white" });
+  const [navbarMode,setNavbarMode] = useState("light");
+  const [textFormMode, setTextFormMode] = useState({bg:"white",color:"black",textarea:"white"});
+  const [alertText, setAlertText] = useState(null);
+
+  
+  const showAlert = (status) =>{
+
+    setAlertText(status);
+    
+  }
+
+  return (
+
+    <div id="App">
+    <Navbar title={'TextIn'} toggleMode={toggleMode} mode={navbarMode}/>
+    <Alert msg={alertText}/>
+    <TextForm mode={textFormMode} showAlert={showAlert}/> 
+    <About mode={mode}/> 
+    </div>
+   
+  );
+}
+
+export default App;
+
+--------------- File : TextForm.mjs --------------------
+
+import React, { useState } from 'react'
+
+export default function TextForm(props) {
+
+    const [textState, changeTextState] = useState('');
+
+    const handleOnCopy = () => {
+        let t = document.getElementById('floatingTextarea2').value;
+
+        navigator.clipboard.writeText(t)
+            .then(() => {
+                console.log('Copied to clipboard!');
+                props.showAlert("Copied!");
+            })
+            .catch((err) => {
+                props.showAlert("Try Again");
+            });
+    }
+
+   
+    return (
+        <>
+            <div id="textForm" className={`textFormPage min-vh-100 w-100`}>
+                <div className='container pt-4'>
+                    <div className="d-md-flex mb-2 justify-content-md-end">
+                        <button type="button" className="copyBtn btn btn-outline-primary rounded-0" onClick={handleOnCopy}>Copy</button>
+                    </div>
+                    <textarea className="form-control" value={textState} onChange={handleOnApply} placeholder="Enter Your text here" id="floatingTextarea2" style={{ height: '200px' }}></textarea>
+                </div>
+            </div>
+        </>
+    )
+}
+
+------------ File : Alert.mjs ----------------
+
+import React, { useState } from 'react'
+
+export default function Alert(prop) {
+
+    const [toggle,setToggle] = useState(true);
+    
+    if (prop.msg != null) {
+
+        if(toggle){
+            return (
+                <div className="bg-danger">
+                <div className="position-absolute m-4 text-white p-2 bg-success" style={{top:52, left:"45%"}} role="alert">
+                    <div>
+                        <strong className="me-auto p-3">{prop.msg}</strong>
+                        <button type="button" onClick={()=>setToggle(!toggle)} className="btn-close btn-close-white" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+    }
+
+}

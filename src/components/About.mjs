@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types';
 
 
 export default function About(props) {
@@ -60,10 +59,3 @@ export default function About(props) {
   )
 }
 
-About.propTypes = {
-  mode: PropTypes.object,
-};
-
-About.defaultProps = {
-  mode: {color:"black", backgroundColor:"white"}
-}
