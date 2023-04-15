@@ -1,14 +1,48 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function TextForm(props) {
 
     const [textState, changeTextState] = useState('');
 
+    useEffect(() => {
+
+        if (props.mode.mode === 'light') {
+
+            document.getElementById('textForm').style.backgroundColor = "white";
+            document.getElementById('textForm').style.color = "black";
+
+            document.getElementById('floatingTextarea2').style.backgroundColor = "white"
+            document.getElementById("floatingTextarea2").style.color = "black";
+
+            document.getElementById('preview').style.color = "black";
+
+            document.getElementById('selectFilter').style.backgroundColor = "white";
+            document.getElementById('selectFilter').style.color = "black";
+            Array.from(document.getElementById('selectFilter').children).forEach(e=>{e.style.color="black"})
+            
+        }
+        else if (props.mode.mode === 'dark') {
+           
+
+            document.getElementById('textForm').style.backgroundColor = "black";
+            document.getElementById('textForm').style.color = "white";
+
+            document.getElementById('floatingTextarea2').style.backgroundColor = "#343a40"
+            document.getElementById("floatingTextarea2").style.color = "white";
+
+            document.getElementById('preview').style.color = "white";
+
+            document.getElementById('selectFilter').style.backgroundColor = "gray";
+            document.getElementById('selectFilter').style.color = "white";
+            Array.from(document.getElementById('selectFilter').children).forEach(e=>{e.style.color="white"})
+        }
+
+    });
     function countWords(str) {
         str = str.trim();
-        
+
         var words = str.split(/\s+/);
-        
+
 
         if (words[0] === '') {
             return 0;
@@ -39,9 +73,9 @@ export default function TextForm(props) {
                 props.showAlert("Try Again");
             });
 
-        setTimeout(()=>{
+        setTimeout(() => {
             props.showAlert(null);
-        },2000)
+        }, 2000)
     }
 
     const handleOnApply = (event) => {
