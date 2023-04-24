@@ -2,7 +2,9 @@ import './App.css';
 import Navbar from './components/Navbar.mjs';
 import TextForm from './components/TextForm.mjs';
 import About from './components/About.mjs';
-import Alert from './components/Alert.mjs'
+import Settings from './components/Settings.mjs';
+import Alert from './components/Alert.mjs';
+import ColorPalette from './components/colorPalette.mjs';
 import { useState } from 'react';
 import {
   BrowserRouter as Router,
@@ -12,45 +14,34 @@ import {
 
 function App() {
 
-  const [mode, setMode] = useState({ color: "black", backgroundColor: "white" });
-  const [navbarMode, setNavbarMode] = useState("light");
-  const [textFormMode, setTextFormMode] = useState({ mode: 'light'});
+  const [theme, setTheme] = useState({ color: "white", backgroundColor: "#290661" });
+  const [isDarkModeEnable,toggleDarkModeState] = useState(false);
   const [alertText, setAlertText] = useState(null);
-
+  const [showColorPalette, setShowColorPalette] = useState(false);
+  const [listOfColors,setListOfColors] = useState(['#290661','#031633','#58151c','#561435','#653208','#0a3622','#0d503c','#055160','#343a40'])
 
   const showAlert = (status) => {
 
     setAlertText(status);
 
   }
-
-
-  const toggleMode = () => {
-    if (mode.color === "black") {
-      setMode({ color: "white", backgroundColor: "black" });
-      setNavbarMode("dark");
-      setTextFormMode({mode : 'dark'});
-    }
-
-    else if (mode.color === "white") {
-      setMode({ color: "black", backgroundColor: "white" });
-      setNavbarMode("light");
-      setTextFormMode({mode : 'light'});
-    }
-  }
+  
 
   return (
 
     <Router>
       <div id="App">
 
-        <Navbar title={'TextIn'} toggleMode={toggleMode} mode={navbarMode} />
-        <Alert msg={alertText} func={setAlertText} />
+        <Navbar title={'TextIn'} theme={theme} isDarkModeEnable={isDarkModeEnable} toggleDarkModeState={toggleDarkModeState}/>
+        <Alert msg={alertText} func={setAlertText}  />
+        <ColorPalette showColorPalette={showColorPalette} setShowColorPalette={setShowColorPalette} listOfColors={listOfColors} setListOfColors={setListOfColors} setTheme={setTheme}/>
 
         <Routes>
-          <Route path="/" element={<TextForm mode={textFormMode} showAlert={showAlert} />} />
-          <Route path="/about" element={<About mode={mode} />} />
+          <Route path="/" element={<TextForm theme={theme} isDarkModeEnable={isDarkModeEnable} showAlert={showAlert} />} />
+          <Route path="/about" element={<About theme={theme} isDarkModeEnable={isDarkModeEnable} />} />
+          <Route path="/settings" element={<Settings showColorPalette={showColorPalette} setShowColorPalette={setShowColorPalette} listOfColors={listOfColors} isDarkModeEnable={isDarkModeEnable} theme={theme} setTheme={setTheme}/>}/>
         </Routes>
+
 
       </div>
     </Router>

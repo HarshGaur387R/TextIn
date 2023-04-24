@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import tinycolor from 'tinycolor2';
 
 export default function TextForm(props) {
 
@@ -6,8 +7,21 @@ export default function TextForm(props) {
 
     useEffect(() => {
 
-        if (props.mode.mode === 'light') {
+        if (props.isDarkModeEnable) {
 
+            document.getElementById('textForm').style.backgroundColor = props.theme.backgroundColor;
+            document.getElementById('textForm').style.color = "white";
+
+            document.getElementById('floatingTextarea2').style.backgroundColor = tinycolor(props.theme.backgroundColor).darken(5).toString()
+            document.getElementById("floatingTextarea2").style.color = "white";
+
+            document.getElementById('preview').style.color = "white";
+
+            document.getElementById('selectFilter').style.backgroundColor = tinycolor(props.theme.backgroundColor).darken(5).toString();
+            document.getElementById('selectFilter').style.color = "white";
+            Array.from(document.getElementById('selectFilter').children).forEach(e=>{e.style.color="white"})
+        }
+        else{
             document.getElementById('textForm').style.backgroundColor = "white";
             document.getElementById('textForm').style.color = "black";
 
@@ -20,21 +34,6 @@ export default function TextForm(props) {
             document.getElementById('selectFilter').style.color = "black";
             Array.from(document.getElementById('selectFilter').children).forEach(e=>{e.style.color="black"})
             
-        }
-        else if (props.mode.mode === 'dark') {
-           
-
-            document.getElementById('textForm').style.backgroundColor = "black";
-            document.getElementById('textForm').style.color = "white";
-
-            document.getElementById('floatingTextarea2').style.backgroundColor = "#343a40"
-            document.getElementById("floatingTextarea2").style.color = "white";
-
-            document.getElementById('preview').style.color = "white";
-
-            document.getElementById('selectFilter').style.backgroundColor = "gray";
-            document.getElementById('selectFilter').style.color = "white";
-            Array.from(document.getElementById('selectFilter').children).forEach(e=>{e.style.color="white"})
         }
 
     });
@@ -143,7 +142,7 @@ export default function TextForm(props) {
                 <div className="container mt-4 text-end">
                     <h1>Text summary</h1>
                     <p>{countWords(textState)} Words and Characters {textState.length}</p>
-                    <p>{0.008 * textState.split(" ").length} Minutes Read</p>
+                    <p>{0.008 * countWords(textState)} Minutes Read</p>
                 </div>
 
                 <div className="container mt-4 text-start">
