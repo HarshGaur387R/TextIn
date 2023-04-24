@@ -39,7 +39,7 @@ export default function Navbar(prop) {
         }
         else{
             document.querySelector('.navbar').style.backgroundColor = tinycolor('white').darken(5).toString();
-            document.querySelector('.navbar').classList.add('navbar-light');
+            document.querySelector('.navbar').classList.remove('navbar-dark');
             
             document.querySelector('.navbar-brand').style.color = "black";
             document.querySelectorAll('.nav-link').forEach((e)=>{
