@@ -19,7 +19,7 @@ export default function colorPalette(show) {
 
     return (
       <div>
-        <div className="container pt-4 position-fixed" style={{ maxWidth: "250px", maxHeight: "250px", backgroundColor: "white", border: "2px solid blue", top: "50%", left: "50%", marginTop: "-125px", marginLeft: "-125px" }}>
+        <div className="container pt-4 position-fixed" style={{ maxWidth: "250px", maxHeight: "250px", backgroundColor: "white", border: "2px solid blue", top: "50%", left: "50%", marginTop: "-125px", marginLeft: "-125px",zIndex:"10" }}>
           <div className='flex flex-column align-item-center gap-4 pb-3 text-center'>
             <h4>Click Box To Select</h4>
             <input id="colorSelector" type='color' style={{ width: "100px", height: "50px", border: "2px solid blue" }} />
