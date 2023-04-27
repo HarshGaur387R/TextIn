@@ -6,7 +6,18 @@ export default function TextSearchWindow(prop) {
     if (prop.showTextSearchWindow) {
 
         let searchText = prop.searchBoxText;
-        const regex = new RegExp(searchText, 'gi');
+        let regex;
+
+
+        if(prop.selectedCheckBox === 'flexRadioDefault1'){
+            regex = new RegExp(searchText, 'gi');
+        }
+        else if(prop.selectedCheckBox === 'flexRadioDefault2'){
+            regex = new RegExp(`\\b${searchText}\\b`, 'gi');
+        }
+        else if(prop.selectedCheckBox === 'flexRadioDefault3'){
+            regex = new RegExp(`\\b${searchText}\\b`);
+        }
 
         const handleOnReplace = () =>{
             

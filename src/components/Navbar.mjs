@@ -9,8 +9,11 @@ export default function Navbar(prop) {
     }
 
     const handleOnSearchText = () =>{
-        prop.setSearchBoxText(document.getElementById('inputSearchBox').value);
         prop.setShowTextSearchWindow(!prop.showTextSearchWindow);
+    }
+
+    const handleOnChange = () =>{
+        prop.setSearchBoxText(document.getElementById('inputSearchBox').value);
     }
 
     useEffect(()=>{
@@ -107,8 +110,8 @@ export default function Navbar(prop) {
                     </ul>
 
                     <div className="d-flex me-md-5">
-                        <input id="inputSearchBox" className="form-control me-2" type="search" placeholder="Search Text" aria-label="Search" />
-                        <button className="btn btn-primary" onClick={handleOnSearchText}>Search</button>
+                        <input id="inputSearchBox" className="form-control me-2" type="search" placeholder="Search Text" aria-label="Search" onChange={handleOnChange} />
+                        <button className="btn btn-primary" onClick={handleOnSearchText} disabled={prop.searchBoxText.length < 1}>Search</button>
                     </div>
                 </div>
             </div>
