@@ -41,10 +41,10 @@ export default function About(props) {
 
         <div className="container pt-4">
           <h1>
-            About US
+            About us
           </h1>
 
-          <p className="mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi labore quos officiis dicta expedita ea asperiores dolorum nostrum quis eaque similique soluta, assumenda repellendus dolores numquam dolore sed beatae nemo accusamus! Laboriosam ut cum tenetur, itaque fugit error similique commodi numquam? Amet facilis eos aspernatur, omnis excepturi possimus dolores incidunt. Odit, accusantium eligendi.</p>
+          <p className="mt-3">TextIn is an open source text filterer tool in form of web application. It will helps you to filter your text. Like removing extra spaces, Special characters, Converting to uppercase/lowercase and many more other facilities.  If you don't like the default dark theme color then you can change it from settings or create your own.</p>
 
           <div className="accordion" id="accordionPanelsStayOpenExample">
             <div className="accordion-item">

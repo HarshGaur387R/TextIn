@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import tinycolor from 'tinycolor2';
 
 export default function TextForm(props) {
-
-    const [textState, changeTextState] = useState('');
 
     useEffect(() => {
 
@@ -77,40 +75,40 @@ export default function TextForm(props) {
         }, 2000)
     }
 
-    const handleOnApply = (event) => {
-        changeTextState(event.target.value);
+    const handleOnChange = (event) => {
+        props.setModifiedText(event.target.value);
     }
 
-    const handleOnUppercase = () => {
+    const handleOnClick = () => {
 
         let filter = document.getElementById('selectFilter').value;
 
         switch (filter) {
             case '0':
-                changeTextState(textState.toUpperCase());
+                props.setModifiedText(props.modifiedText.toUpperCase());
                 break;
 
             case '1':
-                changeTextState(textState.toLowerCase());
+                props.setModifiedText(props.modifiedText.toLowerCase());
                 break;
 
             case '2':
-                changeTextState(removeWhitespace(textState));
+                props.setModifiedText(removeWhitespace(props.modifiedText));
                 break;
 
             case '3':
-                changeTextState(removeSpecialCharacters(textState));
+                props.setModifiedText(removeSpecialCharacters(props.modifiedText));
                 break;
 
             case '4':
-                changeTextState(removeExtraSpaces(textState));
+                props.setModifiedText(removeExtraSpaces(props.modifiedText));
                 break;
             default:
         }
     }
 
     const handleOnClear = () => {
-        changeTextState("");
+        props.setModifiedText("");
     }
 
     return (
@@ -122,7 +120,7 @@ export default function TextForm(props) {
                         <button type="button" className="copyBtn btn btn-outline-primary rounded-0" onClick={handleOnCopy}>Copy</button>
                     </div>
 
-                    <textarea className="form-control" value={textState} onChange={handleOnApply} placeholder="Enter Your text here" id="floatingTextarea2" style={{ height: '200px' }}></textarea>
+                    <textarea className="form-control" value={props.modifiedText} onChange={handleOnChange} placeholder="Enter Your text here" id="floatingTextarea2" style={{ height: '200px' }}></textarea>
 
                     <div className="d-grid gap-2 d-md-flex mt-3 justify-content-md-end">
 
@@ -134,20 +132,20 @@ export default function TextForm(props) {
                             <option value={'4'}>Remove Extra Space</option>
                         </select>
 
-                        <button className="btn btn-primary" onClick={handleOnUppercase} type="button">Apply</button>
+                        <button className="btn btn-primary" onClick={handleOnClick} type="button">Apply</button>
                         <button className="btn btn-primary" onClick={handleOnClear} type="button">Clear</button>
                     </div>
                 </div>
 
                 <div className="container mt-4 text-end">
                     <h1>Text summary</h1>
-                    <p>{countWords(textState)} Words and Characters {textState.length}</p>
-                    <p>{0.008 * countWords(textState)} Minutes Read</p>
+                    <p>{countWords(props.modifiedText)} Words and Characters {props.modifiedText.length}</p>
+                    <p>{0.008 * countWords(props.modifiedText)} Minutes Read</p>
                 </div>
 
                 <div className="container mt-4 text-start">
                     <h2>Preview</h2>
-                    <p id="preview">{textState}</p>
+                    <p id="preview">{props.modifiedText}</p>
                 </div>
             </div>
         </>

@@ -8,6 +8,11 @@ export default function Navbar(prop) {
         prop.toggleDarkModeState(!prop.isDarkModeEnable);
     }
 
+    const handleOnSearchText = () =>{
+        prop.setSearchBoxText(document.getElementById('inputSearchBox').value);
+        prop.setShowTextSearchWindow(!prop.showTextSearchWindow);
+    }
+
     useEffect(()=>{
         if (prop.isDarkModeEnable) {
             document.querySelector('.navbar').style.backgroundColor = tinycolor(prop.theme.backgroundColor).darken(5).toString();
@@ -34,7 +39,7 @@ export default function Navbar(prop) {
 
 
             document.querySelector('.dropdown-divider').style.backgroundColor = "white";
-
+            document.getElementById('inputSearchBox').style.backgroundColor = tinycolor(prop.theme.backgroundColor).brighten(80);
 
         }
         else{
@@ -62,7 +67,8 @@ export default function Navbar(prop) {
             });
 
 
-            document.querySelector('.dropdown-divider').style.backgroundColor = "white";
+            document.querySelector('.dropdown-divider').style.backgroundColor = "gray";
+            document.getElementById('inputSearchBox').style.backgroundColor = "white";
 
         }
     });
@@ -101,8 +107,8 @@ export default function Navbar(prop) {
                     </ul>
 
                     <div className="d-flex me-md-5">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-primary">Search</button>
+                        <input id="inputSearchBox" className="form-control me-2" type="search" placeholder="Search Text" aria-label="Search" />
+                        <button className="btn btn-primary" onClick={handleOnSearchText}>Search</button>
                     </div>
                 </div>
             </div>
