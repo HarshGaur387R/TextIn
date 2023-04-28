@@ -57,15 +57,14 @@ export default function Settings(props) {
 
             list.appendChild(listItem);
         });
-
     })
 
 
     return (
-        <div >
-            <div className="min-vh-100 position-relative"> {/*====> */}
+        <div>
+            <div className="min-vh-100" style={{paddingTop:"1px"}}>
 
-                <div className="container mt-4 pt-2 position-absolute top-0 end-0 start-0 bottom-0" style={{ zIndex: 1 }}>
+                <div className="container mt-4 pt-2 top-0 end-0 start-0 bottom-0" style={{ zIndex: 1 }}>
                     <h1>
                         Settings
                     </h1>
@@ -95,7 +94,7 @@ export default function Settings(props) {
 
                     <div className='flex justify-content-center align-item-center'>
 
-                        <div className="checkRadios flex flex-column justify-content-end gap-3 mt-3" style={{fontSize:"20px"}}>
+                        <div className="checkRadios flex flex-column justify-content-end mt-3" style={{fontSize:"20px"}}>
 
                             <div className="htmlForm-check">
                                 <input className="htmlForm-check-input" checked={props.selectedCheckBox === 'flexRadioDefault1'} style={{transform:"scale(1.7)"}}  type="radio" name="flexRadioDefault" id="flexRadioDefault1" onChange={handleOnChange}/>
