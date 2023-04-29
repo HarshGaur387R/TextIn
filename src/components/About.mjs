@@ -63,8 +63,70 @@ export default function About(props) {
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                <div className="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <div className="accordion-body align-item-center justify-content-center text-center">
+                  <strong>Follow The instruction Step by Step to find out how to turn on dark mode.</strong>
+                  <br />
+                  <br />
+                  <p>{'Step 1) : Click On Dropdown it is already visible if you are in desktop. For smaller device you need to click on menu first.'}</p>
+                  <img src="\images\s1.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}} />
+                  <br />
+                  <br />
+                  <br />
+                  <p>{'Step 2) : Click On Switch button to Turn On dark mode. You can turn off light mode by clicking on it again.'}</p>
+                  <img src="\images\s2.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <br />
+                  <br />
+                  <br />
+                  <p>{'Step 3) : Dark Mode is now enable.'}</p>
+                  <img src="\images\s3.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <br />
+                  <br />
+                  <br />
+                  <strong>How to select different dark mode ? Follow the instruction to find it out:</strong>
+                  <br />
+                  <br />
+                  <br />
+                  <p>{'Step 1) : Click on settings button in dropdown'}</p>
+                  <img src="\images\s4.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <br />
+                  <br />
+                  <br />
+                  <p>{'Step 2) : Now you can see their are already many predefined themes.'}</p>
+                  <img src="\images\s5.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <br />
+                  <br />
+                  <br />
+                  <p>{'Step 3) : You can select any theme you want. but make sure dark mode is enabled.'}</p>
+                  <img src="\images\s6.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <br />
+                  <br />
+                  <br />
+                  <strong>How do i create my own theme? Follow the instruction to find it out :</strong>
+                  <br />
+                  <br />
+                  <br />
+                  <p>{'Step 1) : Click on plus looking add button to create your own theme.'}</p>
+                  <img src="\images\s7.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <br />
+                  <br />
+                  <br />
+                  <p>{'Step 2) : Then click on color box to open color palette.'}</p>
+                  <img src="\images\s8.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <br />
+                  <br />
+                  <br />
+                  <p>{'Step 3) : Now Your select your favorite color. But make sure that color should be dark'}</p>
+                  <img src="\images\s9.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <br />
+                  <br />
+                  <br />
+                  <p>{'Step 4) : Now select your favorite theme. make sure dark mode is on.'}</p>
+                  <img src="\images\s10.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <br />
+                  <br />
+                  <br />
+                  <p>{'Step 5) : You can create as many as themes you want . But make theme little darker for better experience.'}</p>
+                  <img src="\images\s11.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
                 </div>
               </div>
             </div>
@@ -75,8 +137,11 @@ export default function About(props) {
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
-                <div className="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <div className="accordion-body text-center">
+                  <strong>Follow The given instruction step by step :</strong>
+                  
+                  {/* =====================================================> */}
+
                 </div>
               </div>
             </div>
