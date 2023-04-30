@@ -53,7 +53,7 @@ export default function About(props) {
           <br/>
 
           TEXTIN is designed to make text manipulation easy and intuitive, with a clean and modern interface that is easy to navigate. You can use our app for a wide range of text editing tasks, from basic formatting to more advanced search and replace operations. Whether you're a student, writer, or professional, TEXTIN is the perfect tool for anyone who needs to work with text on a daily basis.
-          We are constantly working to improve and update TEXTIN, so if you have any feedback or suggestions, please don't hesitate to get in touch with us. We hope you enjoy using TEXTIN as much as we enjoyed creating it!.</p>
+          We are constantly working to improve and update TEXTIN, so if you have any feedback or suggestions, please don't hesitate to get in touch with us. We hope you enjoy using TEXTIN as much as we enjoyed creating it! . </p>
 
           <div className="accordion" id="accordionPanelsStayOpenExample">
             
