@@ -189,6 +189,7 @@ export default function About(props) {
                   <img src="\images\s18.png" alt="img 18" width={"70%"} style={{border:"2px solid red"}} />
                 </div>
               </div>
+              
             </div>
           </div>
 
