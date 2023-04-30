@@ -56,6 +56,7 @@ export default function About(props) {
           We are constantly working to improve and update TEXTIN, so if you have any feedback or suggestions, please don't hesitate to get in touch with us. We hope you enjoy using TEXTIN as much as we enjoyed creating it!.</p>
 
           <div className="accordion" id="accordionPanelsStayOpenExample">
+            
             <div className="accordion-item">
               <h2 className="accordion-header" id="panelsStayOpen-headingOne">
                 <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
@@ -73,12 +74,12 @@ export default function About(props) {
                   <br />
                   <br />
                   <p>{'Step 2) : Click On Switch button to Turn On dark mode. You can turn off light mode by clicking on it again.'}</p>
-                  <img src="\images\s2.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <img src="\images\s2.png" alt="img 2" width={"70%"} style={{border:"2px solid red"}}/>
                   <br />
                   <br />
                   <br />
                   <p>{'Step 3) : Dark Mode is now enable.'}</p>
-                  <img src="\images\s3.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <img src="\images\s3.png" alt="img 3" width={"70%"} style={{border:"2px solid red"}}/>
                   <br />
                   <br />
                   <br />
@@ -87,17 +88,17 @@ export default function About(props) {
                   <br />
                   <br />
                   <p>{'Step 1) : Click on settings button in dropdown'}</p>
-                  <img src="\images\s4.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <img src="\images\s4.png" alt="img 4" width={"70%"} style={{border:"2px solid red"}}/>
                   <br />
                   <br />
                   <br />
                   <p>{'Step 2) : Now you can see their are already many predefined themes.'}</p>
-                  <img src="\images\s5.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <img src="\images\s5.png" alt="img 5" width={"70%"} style={{border:"2px solid red"}}/>
                   <br />
                   <br />
                   <br />
                   <p>{'Step 3) : You can select any theme you want. but make sure dark mode is enabled.'}</p>
-                  <img src="\images\s6.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <img src="\images\s6.png" alt="img 6" width={"70%"} style={{border:"2px solid red"}}/>
                   <br />
                   <br />
                   <br />
@@ -106,30 +107,31 @@ export default function About(props) {
                   <br />
                   <br />
                   <p>{'Step 1) : Click on plus looking add button to create your own theme.'}</p>
-                  <img src="\images\s7.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <img src="\images\s7.png" alt="img 7" width={"70%"} style={{border:"2px solid red"}}/>
                   <br />
                   <br />
                   <br />
                   <p>{'Step 2) : Then click on color box to open color palette.'}</p>
-                  <img src="\images\s8.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <img src="\images\s8.png" alt="img 8" width={"70%"} style={{border:"2px solid red"}}/>
                   <br />
                   <br />
                   <br />
                   <p>{'Step 3) : Now Your select your favorite color. But make sure that color should be dark'}</p>
-                  <img src="\images\s9.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <img src="\images\s9.png" alt="img 9" width={"70%"} style={{border:"2px solid red"}}/>
                   <br />
                   <br />
                   <br />
                   <p>{'Step 4) : Now select your favorite theme. make sure dark mode is on.'}</p>
-                  <img src="\images\s10.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <img src="\images\s10.png" alt="img 10" width={"70%"} style={{border:"2px solid red"}}/>
                   <br />
                   <br />
                   <br />
                   <p>{'Step 5) : You can create as many as themes you want . But make theme little darker for better experience.'}</p>
-                  <img src="\images\s11.png" alt="img 1" width={"70%"} style={{border:"2px solid red"}}/>
+                  <img src="\images\s11.png" alt="img 11" width={"70%"} style={{border:"2px solid red"}}/>
                 </div>
               </div>
             </div>
+
             <div className="accordion-item">
               <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
@@ -139,13 +141,30 @@ export default function About(props) {
               <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
                 <div className="accordion-body text-center">
                   <strong>Follow The given instruction step by step :</strong>
-                  
-                  {/* =====================================================> */}
-
+                  <br />
+                  <br />
+                  <p>{'Step 1) : Write your text here to search.'}</p>
+                  <img src="\images\s12.png" alt="img 12" width={"70%"} style={{border:"2px solid red"}} />
+                  <br />
+                  <br />
+                  <br />
+                  <p>{'Step 2) : You will see a pop up window like this. Write the text you want to replace with.'}</p>
+                  <img src="\images\s13.png" alt="img 13" width={"70%"} style={{border:"2px solid red"}} />
+                  <br />
+                  <br />
+                  <br />
+                  <p>{'Step 3) : Then click on replace button.'}</p>
+                  <img src="\images\s14.png" alt="img 14" width={"70%"} style={{border:"2px solid red"}} />
+                  <br />
+                  <br />
+                  <br />
+                  <p>{'Step 4) : Your word is replaced. You can edit search and replace regex from settings'}</p>
+                  <img src="\images\s15.png" alt="img 15" width={"70%"} style={{border:"2px solid red"}} />
                 </div>
               </div>
             </div>
-            <div className="accordion-item">
+
+            <div className="accordion-item text-center">
               <h2 className="accordion-header" id="panelsStayOpen-headingThree">
                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
                   How to filter text?
@@ -153,7 +172,21 @@ export default function About(props) {
               </h2>
               <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingThree">
                 <div className="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <strong>Follow The given instruction step by step :</strong>
+                  <br />
+                  <br />
+                  <p>{'Step 1) : Click on options to choose a filter.'}</p>
+                  <img src="\images\s16.png" alt="img 16" width={"70%"} style={{border:"2px solid red"}} />
+                  <br />
+                  <br />
+                  <br />
+                  <p>{'Step 2) : Then Click on apply button.'}</p>
+                  <img src="\images\s17.png" alt="img 17" width={"70%"} style={{border:"2px solid red"}} />
+                  <br />
+                  <br />
+                  <br />
+                  <p>{'Step 3) : Wallah! Your text is changed.'}</p>
+                  <img src="\images\s18.png" alt="img 18" width={"70%"} style={{border:"2px solid red"}} />
                 </div>
               </div>
             </div>
